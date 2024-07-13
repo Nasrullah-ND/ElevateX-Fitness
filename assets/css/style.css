@@ -1,0 +1,196 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: url('/assets/imgs/silder/download.jpeg') no-repeat center center; 
+    background-size: cover;
+    color: #fff;
+    padding: 100px 0;
+    /* opacity: 80%;
+     */
+     
+}
+
+.navbar {
+    background-color: #333;
+}
+
+.nav-link {
+    color: #fff !important;
+}
+
+.nav-link:hover {
+    color: #f7c08a !important;
+}
+
+.home-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.home-content {
+    position: relative;
+    z-index: 1;
+    padding: 150px 0;
+}
+
+section {
+    padding: 60px 0;
+}
+
+footer {
+    background-color: #333;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #f7c08a;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+   /* Global styles */
+   * {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-size: 16px;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    text-decoration: underline;
+}
+.white-color {
+    color: white !important;
+}
+.main-container-big {
+    min-height: 100vh;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /* Ensure container for video is relative */
+}
+.main-text-container {
+    color: white;
+    position: relative; /* Ensure text is positioned properly */
+    z-index: 1; /* Ensure text is above video */
+    max-width: 800px; /* Limit text width */
+    margin: 0 auto; /* Center align text */
+}
+.main_heading_1 {
+    margin: 0;
+    font-size: 1.5em; /* Adjusted font size */
+}
+.main_heading_2 {
+    margin: 10px 0;
+    font-weight: normal;
+    font-size: 1.2em; /* Adjusted font size */
+}
+.price_line {
+    color: gray;
+    display: block;
+    font-size: 1em; /* Adjusted font size */
+    margin-bottom: 15px;
+}
+.main_links {
+    color: #78b4f3;
+    font-size: 1em; /* Adjusted font size */
+    display: inline-block;
+    text-decoration: none;
+}
+.main_links:hover {
+    text-decoration: underline;
+}
+.main_links + .main_links {
+    margin-left: 20px; /* Adjusted spacing */
+}
+.main_links > i {
+    font-size: 0.8em; /* Adjusted font size */
+}
+.main-container-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Ensure content wraps properly */
+    gap: 20px; /* Gap between boxes */
+}
+.box-col-49 {
+    flex: 1;
+    max-width: 49%;
+}
+.small-box-container {
+    text-align: center;
+    font-size: 12px; /* Adjusted font size */
+    background-size: cover;
+    background-position: center center;
+    height: 580px;
+    position: relative; /* Ensure image covers container */
+    overflow: hidden; /* Hide overflow for video */
+    border-radius: 10px; /* Rounded corners */
+}
+.small-box-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container */
+    z-index: -1; /* Send image to background */
+}
+.video-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+}
+/* Fitness gym specific styles */
+.fitness_gym_bg {
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    padding: 50px;
+    position: relative; /* Ensure image covers container */
+    overflow: hidden; /* Hide overflow for video */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.fitness_gym_bg .btn {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
