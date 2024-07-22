@@ -194,3 +194,54 @@ a:hover {
     font-size: 1.2em;
     margin-top: 20px;
 }
+/* fqs page css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+.faq-section {
+    padding: 60px 0;
+    background: #fff;
+}
+.faq-section .container {
+    max-width: 800px;
+}
+.faq-section .heading {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #333;
+}
+.faq-section .card-header {
+    cursor: pointer;
+    position: relative;
+}
+.faq-section .card-header::after {
+    content: '\f078'; /* FontAwesome chevron down icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease-in-out;
+}
+.faq-section .card-header.collapsed::after {
+    content: '\f077'; /* FontAwesome chevron up icon */
+    transform: translateY(-50%) rotate(180deg);
+}
+.faq-section .card-body {
+    transition: max-height 0.3s ease-in-out;
+}
+.faq-section .card-body.collapsing {
+    max-height: 0;
+    overflow: hidden;
+}
+.faq-section .card-body.show {
+    max-height: 500px; /* Adjust based on content */
+}
+.faq-section .search-bar {
+    margin-bottom: 20px;
+}
