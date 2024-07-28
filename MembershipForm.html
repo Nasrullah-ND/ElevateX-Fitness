@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Form</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Inputmask -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+   <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-dark text-white text-center py-5 mb-4">
+        <div class="container">
+            <h1 class="display-4" style="background: linear-gradient(to right, transparent, rgba(255, 126, 95, 0.5) 50%, transparent);">ElevateX Fitness</h1>
+            <p class="lead" style="background: linear-gradient(to right, transparent, rgba(255, 126, 95, 0.5) 50%, transparent);">Get Fit, Stay Healthy</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home"><img src="assets/imgs/download-removebg-preview.png" alt="" style="width: 150px; height: 60px;"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#packages">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fqs.html">FAQs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#login">Login/Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2 class="heading text-center">Membership Form</h2>
+        <form id="membershipForm">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                <span class="text-danger" id="fullNameError"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                <span class="text-danger" id="emailError"></span>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+                <span class="text-danger" id="phoneError"></span>
+            </div>
+            <div class="form-group">
+                <label for="membershipType">Membership Type</label>
+                <select class="form-control" id="membershipType" required>
+                    <option value="">Select Membership Type</option>
+                    <option value="VIP">VIP Membership</option>
+                    <option value="Gold">Gold Membership</option>
+                    <option value="Premium">Premium Membership</option>
+                    <option value="Normal">Normal Membership</option>
+                </select>
+                <span class="text-danger" id="membershipTypeError"></span>
+            </div>
+            <div class="form-group">
+                <label for="paymentMethod">Payment Method</label>
+                <select class="form-control" id="paymentMethod" required>
+                    <option value="">Select Payment Method</option>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="Debit Card">Debit Card</option>
+                    <option value="PayPal">PayPal</option>
+                </select>
+                <span class="text-danger" id="paymentMethodError"></span>
+            </div>
+            <div class="form-group">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" class="form-control" id="cardNumber" placeholder="Enter your card number" required>
+                <span class="text-danger" id="cardNumberError"></span>
+            </div>
+            <div class="form-group">
+                <label for="expiryDate">Expiry Date</label>
+                <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required>
+                <span class="text-danger" id="expiryDateError"></span>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" class="form-control" id="cvv" placeholder="Enter CVV" required>
+                <span class="text-danger" id="cvvError"></span>
+            </div>
+            <button type="submit" class="btn btn-primary w-100" style="margin-top: 5%; margin-bottom: 10%;">Submit</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p>&copy; 2023 ElevateX Fitness. All rights reserved.</p>
+            <div>
+                <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>Download our app</p>
+            <a href="#" class="text-white mx-2"><i class="fab fa-apple"></i></a>
+            <a href="#" class="text-white mx-2"><i class="fab fa-google-play"></i></a>
+        </div>
+    </footer>
+
+    <!-- Centered Message -->
+    <div id="centerMessage" class="center-message">
+        Form submitted successfully!
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Apply input masks
+            $('#expiryDate').inputmask('99/99', { 'placeholder': 'MM/YY' });
+            $('#cardNumber').inputmask('9999 9999 9999 9999', { 'placeholder': '____ ____ ____ ____' });
+        });
+
+        document.getElementById('membershipForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting the traditional way
+
+            // Clear previous error messages
+            clearErrorMessages();
+
+            // Collect form data
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                membershipType: document.getElementById('membershipType').value,
+                paymentMethod: document.getElementById('paymentMethod').value,
+                cardNumber: document.getElementById('cardNumber').value,
+                expiryDate: document.getElementById('expiryDate').value,
+                cvv: document.getElementById('cvv').value
+            };
+
+            // Validate form data
+            if (!validateFormData(formData)) {
+                return; // Stop form submission if validation fails
+            }
+
+            // Save form data to localStorage
+            const jsonData = JSON.stringify(formData);
+            localStorage.setItem('membershipData', jsonData);
+
+            // Display centered message
+            const centerMessage = document.getElementById('centerMessage');
+            centerMessage.style.display = 'block';
+
+            // Hide form
+            document.getElementById('membershipForm').style.display = 'none';
+
+            setTimeout(() => {
+                centerMessage.style.display = 'none';
+                // Redirect to home page
+                window.location.href = "home.html";
+            }, 3000);
+        });
+
+        function clearErrorMessages() {
+            document.getElementById('fullNameError').innerText = '';
+            document.getElementById('emailError').innerText = '';
+            document.getElementById('phoneError').innerText = '';
+            document.getElementById('membershipTypeError').innerText = '';
+            document.getElementById('paymentMethodError').innerText = '';
+            document.getElementById('cardNumberError').innerText = '';
+            document.getElementById('expiryDateError').innerText = '';
+            document.getElementById('cvvError').innerText = '';
+        }
+
+        function validateFormData(formData) {
+            let isValid = true;
+
+            // Full Name validation
+            if (!formData.fullName) {
+                document.getElementById('fullNameError').innerText = 'Full Name is required.';
+                isValid = false;
+            }
+
+            // Email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!formData.email || !emailPattern.test(formData.email)) {
+                document.getElementById('emailError').innerText = 'Valid Email is required.';
+                isValid = false;
+            }
+
+            // Phone number validation
+            const phonePattern = /^[0-9]{11}$/;
+            if (!formData.phone || !phonePattern.test(formData.phone)) {
+                document.getElementById('phoneError').innerText = 'Phone Number must be 11 digits.';
+                isValid = false;
+            }
+
+            // Membership Type validation
+            if (!formData.membershipType) {
+                document.getElementById('membershipTypeError').innerText = 'Membership Type is required.';
+                isValid = false;
+            }
+
+            // Payment Method validation
+            if (!formData.paymentMethod) {
+                document.getElementById('paymentMethodError').innerText = 'Payment Method is required.';
+                isValid = false;
+            }
+
+            // Card Number validation
+            const cardNumberPattern = /^[0-9]{16}$/;
+            if (!formData.cardNumber.replace(/\s+/g, '') || !cardNumberPattern.test(formData.cardNumber.replace(/\s+/g, ''))) {
+                document.getElementById('cardNumberError').innerText = 'Card Number must be 16 digits.';
+                isValid = false;
+            }
+
+            // Expiry Date validation
+            const expiryDatePattern = /^(0[1-9]|1[0-2])\/?([0-9]{2})$/;
+            if (!formData.expiryDate || !expiryDatePattern.test(formData.expiryDate)) {
+                document.getElementById('expiryDateError').innerText = 'Expiry Date must be in MM/YY format.';
+                isValid = false;
+            }
+
+            // CVV validation
+            const cvvPattern = /^[0-9]{3,4}$/;
+            if (!formData.cvv || !cvvPattern.test(formData.cvv)) {
+                document.getElementById('cvvError').innerText = 'CVV must be 3 or 4 digits.';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
+</body>
+</html>
