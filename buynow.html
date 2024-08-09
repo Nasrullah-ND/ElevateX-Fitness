@@ -6,7 +6,6 @@
     <title>Buy Now</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Additional custom styles can be added here */
         body {
             font-family: Arial, sans-serif;
             background-color: #f8f9fa;
@@ -24,6 +23,7 @@
             border-radius: 5px;
             z-index: 1000;
             animation: fadeIn 0.5s ease-in-out;
+            text-align: center; /* Center text inside popup */
         }
         @keyframes fadeIn {
             0% { opacity: 0; }
@@ -41,6 +41,13 @@
     <div class="container">
         <h2 class="text-center mb-4">Buy Now</h2>
         <form id="orderForm" class="needs-validation" novalidate>
+            <div id="cartItems">
+                <!-- Cart items will be populated by JavaScript -->
+            </div>
+            <div class="mb-3">
+                <label for="totalPrice" class="form-label">Total Price</label>
+                <input type="text" class="form-control" id="totalPrice" name="totalPrice" readonly>
+            </div>
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" id="name" name="name" minlength="3" required>
@@ -68,17 +75,126 @@
                     <option value="bank_transfer">Bank Transfer</option>
                 </select>
             </div>
+            <div class="mb-3">
+                <label for="deliveryDate" class="form-label">Estimated Delivery Date</label>
+                <input type="text" class="form-control" id="deliveryDate" name="deliveryDate" readonly>
+            </div>
             <button type="submit" class="btn btn-primary btn-block">Place Order</button>
         </form>
     </div>
 
     <!-- Popup Message -->
     <div id="popupMessage" class="popup">
-        <h2>Thank you for your order!</h2>
-        <p>We'll process your order shortly.</p>
+        <h2>Thank You for Your Order!</h2>
+        <p>Your order has been successfully placed. We will process it shortly.</p>
+        <p>- ElevateX Fitness</p>
     </div>
 
-    <script src="assets/js/buynow.js"></script>
+    <script>
+        // Function to calculate total price
+        function calculateTotalPrice() {
+            let totalPrice = 0;
+            const items = document.querySelectorAll('#cartItems .row');
+            
+            items.forEach(item => {
+                const quantity = parseFloat(item.querySelector('input[id^="quantity"]').value) || 0;
+                const price = parseFloat(item.querySelector('input[id^="price"]').value) || 0;
+                totalPrice += quantity * price;
+            });
+            
+            return totalPrice.toFixed(2); // Return as string with two decimal points
+        }
 
+        // Function to populate cart items
+        function populateCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cartItems');
+
+            cartItemsContainer.innerHTML = ''; // Clear any existing items
+
+            cart.forEach((item, index) => {
+                const itemHtml = `
+                    <div class="mb-3 row">
+                        <label for="item${index}" class="col-sm-2 col-form-label">Item ${index + 1}</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="item${index}" value="${item.name}" readonly>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="number" class="form-control" id="quantity${index}" value="${item.quantity}" readonly>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="number" class="form-control" id="price${index}" value="${item.price}" readonly>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="number" class="form-control" id="itemTotal${index}" value="${(item.quantity * item.price).toFixed(2)}" readonly>
+                        </div>
+                    </div>
+                `;
+                cartItemsContainer.insertAdjacentHTML('beforeend', itemHtml);
+            });
+
+            const totalPrice = calculateTotalPrice();
+            document.getElementById('totalPrice').value = `$${totalPrice}`;
+        }
+
+        // Function to calculate delivery date
+        function calculateDeliveryDate() {
+            const today = new Date();
+            const deliveryDate = new Date(today);
+            deliveryDate.setDate(today.getDate() + 7);
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return deliveryDate.toLocaleDateString(undefined, options);
+        }
+
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            if (!this.checkValidity()) {
+                event.stopPropagation();
+                this.classList.add('was-validated');
+                return;
+            }
+            
+            const formData = new FormData(this);
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalPrice = document.getElementById('totalPrice').value;
+            const deliveryDate = calculateDeliveryDate();
+
+            const orderDetails = {
+                name: formData.get('name'),
+                address: formData.get('address'),
+                phone: formData.get('phone'),
+                paymentMethod: formData.get('paymentMethod'),
+                items: cart,
+                totalPrice: totalPrice,
+                deliveryDate: deliveryDate,
+                timestamp: new Date().toLocaleString()
+            };
+            
+            let orders = JSON.parse(localStorage.getItem('orders')) || [];
+            orders.push(orderDetails);
+            localStorage.setItem('orders', JSON.stringify(orders));
+
+            // Clear cart and form data
+            localStorage.removeItem('cart');
+            this.reset();
+            this.classList.remove('was-validated');
+
+            // Show popup message
+            const popup = document.getElementById('popupMessage');
+            popup.style.display = 'block';
+
+            // Redirect to shop page after 5 seconds
+            setTimeout(function() {
+                popup.style.display = 'none';
+                window.location.href = 'shop.html'; // Replace with your actual shop page URL
+            }, 5000); // Display popup for 5 seconds before redirecting
+        });
+
+        window.onload = function() {
+            populateCart();
+            document.getElementById('deliveryDate').value = calculateDeliveryDate();
+        };
+    </script>
 </body>
 </html>
