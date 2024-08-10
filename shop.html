@@ -1,357 +1,396 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ElevateX Fitness Shop</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body style="background-color: black;">
-    <!-- Header -->
-    <header class="bg-dark text-white text-center py-5 mb-4">
-        <div class="container">
-            <h1 class="display-4">ElevateX Fitness Shop</h1>
-            <p class="lead">Discover our top products</p>
-        </div>
-    </header>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="assets/imgs/download-removebg-preview.png" alt="Logo" style="width: 150px; height: 60px;">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="shopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                        <ul class="dropdown-menu" aria-labelledby="shopDropdown">
-                            <li><a class="dropdown-item" href="#">Classic Collection</a></li>
-                            <li><a class="dropdown-item" href="#">Training Collection</a></li>
-                            <li><a class="dropdown-item" href="#">Accessories</a></li>
-                            <li><a class="dropdown-item" href="#">Men</a></li>
-                            <li><a class="dropdown-item" href="#">Women</a></li>
-                            <li><a class="dropdown-item" href="#">PrideGrand Collection</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="fqs.html">FAQs</a></li>
-                    <li class="nav-item dropdown" id="cartDropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="cartDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cart <span id="cartCount" class="badge bg-primary">0</span></a>
-                        <ul class="dropdown-menu" aria-labelledby="cartDropdownLink" style="margin-left: -20%;">
-                            <ul id="cartItems">
-                                <!-- Cart items will be dynamically added here -->
-                            </ul>
-                            <li><a class="dropdown-item" href="buynow.html" id="checkoutLink" class="disabled">Proceed to Checkout</a></li>
-                        </ul>
-                    </li>
-                </ul>
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ElevateX Fitness Shop</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <!-- Custom Styles -->
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body style="background-color: black;">
+        <!-- Header -->
+        <header class="bg-dark text-white text-center py-5 mb-4">
+            <div class="container">
+                <h1 class="display-4">ElevateX Fitness Shop</h1>
+                <p class="lead">Discover our top products</p>
             </div>
-        </div>
-    </nav>
-
-    <!-- Shop Section -->
-    <section id="shop" class="container my-5">
-        <h2 class="text-center mb-4">Top Products</h2>
-        <!-- Classic Collection -->
-        <div class="mb-5">
-            <h3>Classic Collection</h3>
-            <div class="row">
-                <!-- Product 1 -->
-                <div class="col-md-4 product-card">
-                    <div class="card">
-                        <img src="assets/imgs/classic collections/joe pullover hoodie.webp" class="card-img-top" alt="Classic T-Shirt 1">
-                        <div class="card-body">
-                            <h5 class="card-title">joe pullover hoodie</h5>
-                            <p class="card-text">$19.99</p>
-                            <button class="btn btn-primary add-to-cart" data-product-name="Classic T-Shirt 1" data-product-price="19.99">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product 2 -->
-                <div class="col-md-4 product-card">
-                    <div class="card">
-                        <img src="assets/imgs/classic collections/joe tee.webp" class="card-img-top" alt="Classic T-Shirt 2">
-                        <div class="card-body">
-                            <h5 class="card-title">joe tee</h5>
-                            <p class="card-text">$21.99</p>
-                            <button class="btn btn-primary add-to-cart" data-product-name="Classic T-Shirt 2" data-product-price="21.99">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product 3 -->
-                <div class="col-md-4 product-card">
-                    <div class="card">
-                        <img src="assets/imgs/classic collections/weight plate tee gril.webp" class="card-img-top" alt="Classic T-Shirt 3">
-                        <div class="card-body">
-                            <h5 class="card-title">weight plate tee gril</h5>
-                            <p class="card-text">$22.99</p>
-                            <button class="btn btn-primary add-to-cart" data-product-name="Classic T-Shirt 3" data-product-price="22.99">Add to Cart</button>
-                        </div>
-                    </div>
+        </header>
+    
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/imgs/download-removebg-preview.png" alt="Logo" style="width: 150px; height: 60px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="fqs.html">FAQs</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="buynow.html">
+                                Cart <span id="cartCount" class="badge bg-primary">0</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+        </nav>
+    
+       <!-- Secondary Header -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow secondary-header">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbarSecondary">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="#classic-collection">Classic Collection</a></li>
+                <li class="nav-item"><a class="nav-link" href="#training-collection">Training Collection</a></li>
+                <li class="nav-item"><a class="nav-link" href="#accessories">Accessories</a></li>
+                <li class="nav-item"><a class="nav-link" href="#men-collection">Men</a></li>
+                <li class="nav-item"><a class="nav-link" href="#women-collection">Women</a></li>
+                <li class="nav-item"><a class="nav-link" href="#pridegrand-collection">PrideGrand Collection</a></li>
+            </ul>
+            <div class="d-flex ms-3">
+                <input type="text" class="form-control me-2" id="searchBar" placeholder="Search products...">
+                <button class="btn btn-outline-light" onclick="searchProducts()"><i class="fas fa-search"></i></button>
+            </div>
         </div>
+    </div>
+</nav>
 
-        <!-- Training Collection -->
-        <div class="mb-5">
-            <h3>Training Collection</h3>
-            <div class="row">
-                <!-- Product 4 -->
-                <div class="col-md-4 product-card">
-                    <div class="card">
-                        <img src="assets/imgs/Training Collection/Nike Pro 365.png" class="card-img-top" alt="Training Shirt 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Nike Pro 365</h5>
-                            <p class="card-text">$24.99</p>
-                            <button class="btn btn-primary add-to-cart" data-product-name="Training Shirt 1" data-product-price="24.99">Add to Cart</button>
+        <!-- Shop Section -->
+        <section id="shop" class="container my-5" style="background-image: url(assets/imgs/silder/background12.jpeg); background-size: contain;">
+            <h2 class="text-center mb-4">Top Products</h2>
+    
+            <!-- Classic Collection -->
+            <div id="classic-collection" class="mb-5">
+                <h3>Classic Collection</h3>
+                <div class="row">
+                    <!-- Product 1 -->
+                    <div class="col-md-3 product-card">
+                        <div class="card">
+                            <img src="assets/imgs/classic collections/joe pullover hoodie.webp" class="card-img-top" alt="Joe Pullover Hoodie">
+                            <div class="card-body">
+                                <h5 class="card-title">Joe Pullover Hoodie</h5>
+                                <p class="card-text">$19.99</p>
+                                <button class="btn btn-primary add-to-cart" data-product-name="Joe Pullover Hoodie" data-product-price="19.99">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Product 5 -->
-                <div class="col-md-4 product-card">
-                    <div class="card">
-                        <img src="assets/imgs/Training Collection/Nike Pro Indy Plunge.png" class="card-img-top" alt="Training Shirt 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Nike Pro Indy Plunge</h5>
-                            <p class="card-text">$26.99</p>
-                            <button class="btn btn-primary add-to-cart" data-product-name="Training Shirt 2" data-product-price="26.99">Add to Cart</button>
+                    <!-- Product 2 -->
+                    <div class="col-md-3 product-card">
+                        <div class="card">
+                            <img src="assets/imgs/classic collections/joe tee.webp" class="card-img-top" alt="Joe Tee">
+                            <div class="card-body">
+                                <h5 class="card-title">Joe Tee</h5>
+                                <p class="card-text">$21.99</p>
+                                <button class="btn btn-primary add-to-cart" data-product-name="Joe Tee" data-product-price="21.99">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Product 6 -->
-                <div class="col-md-4 product-card">
-                    <div class="card">
-                        <img src="assets/imgs/Training Collection/Nike Pro Sculpt.png" class="card-img-top" alt="Training Shirt 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Nike Pro Sculpt</h5>
-                            <p class="card-text">$27.99</p>
-                            <button class="btn btn-primary add-to-cart" data-product-name="Training Shirt 3" data-product-price="27.99">Add to Cart</button>
+                    <!-- Product 3 -->
+                    <div class="col-md-3 product-card">
+                        <div class="card">
+                            <img src="assets/imgs/classic collections/weight plate tee gril.webp" class="card-img-top" alt="Weight Plate Tee Girl">
+                            <div class="card-body">
+                                <h5 class="card-title">Weight Plate Tee Girl</h5>
+                                <p class="card-text">$22.99</p>
+                                <button class="btn btn-primary add-to-cart" data-product-name="Weight Plate Tee Girl" data-product-price="22.99">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="col-md-3 product-card">
+                        <div class="card">
+                            <img src="assets/imgs/classic collections/weight plate tee.webp" class="card-img-top" alt="Classic T-Shirt 4">
+                            <div class="card-body">
+                                <h5 class="card-title">weight plate tee</h5>
+                                <p class="card-text">$24.99</p>
+                                <button class="btn btn-primary add-to-cart" data-product-name="Classic T-Shirt 4" data-product-price="24.99">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Accessories -->
-        <div class="mb-5">
-            <h3>Accessories</h3>
-            <div class="row">
-                <!-- Product 7 -->
-                <div class="col-md-4 product-card">
-                    <div class="card">
-                        <img src="assets/imgs/accessories/Fat Grips (Pair).webp" class="card-img-top" alt="Accessory 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Fat Grips (Pair)</h5>
-                            <p class="card-text">$15.99</p>
-                            <button class="btn btn-primary add-to-cart" data-product-name="Accessory 1" data-product-price="15.99">Add to Cart</button>
+    
+            <!-- Training Collection -->
+            <div id="training-collection" class="mb-5">
+                <h3>Training Collection</h3>
+                <div class="row">
+                    <!-- Product 1 -->
+                    <div class="col-md-3 product-card">
+                        <div class="card">
+                            <img src="assets/imgs/Training Collection/Nike Pro 365.png" class="card-img-top" alt="Nike Pro 365">
+                            <div class="card-body">
+                                <h5 class="card-title">Nike Pro 365</h5>
+                                <p class="card-text">$24.99</p>
+                                <button class="btn btn-primary add-to-cart" data-product-name="Nike Pro 365" data-product-price="24.99">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Product 8 -->
-                <div class="col-md-4 product-card">
-                    <div class="card">
-                        <img src="assets/imgs/accessories/Palm Protection Gloves-Blue.webp" class="card-img-top" alt="Accessory 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Palm Protection Gloves-Blue</h5>
-                            <p class="card-text">$18.99</p>
-                            <button class="btn btn-primary add-to-cart" data-product-name="Accessory 2" data-product-price="18.99">Add to Cart</button>
+                    <!-- Product 2 -->
+                    <div class="col-md-3 product-card">
+                        <div class="card">
+                            <img src="assets/imgs/Training Collection/Nike Pro Indy Plunge.png" class="card-img-top" alt="Nike Pro Indy Plunge">
+                            <div class="card-body">
+                                <h5 class="card-title">Nike Pro Indy Plunge</h5>
+                                <p class="card-text">$26.99</p>
+                                <button class="btn btn-primary add-to-cart" data-product-name="Nike Pro Indy Plunge" data-product-price="26.99">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Product 9 -->
-                <div class="col-md-4 product-card">
-                    <div class="card">
-                        <img src="assets/imgs/accessories/Workout Hand Grips.webp" class="card-img-top" alt="Accessory 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Workout Hand Grips</h5>
-                            <p class="card-text">$20.99</p>
-                            <button class="btn btn-primary add-to-cart" data-product-name="Accessory 3" data-product-price="20.99">Add to Cart</button>
+                    <!-- Product 3 -->
+                    <div class="col-md-3 product-card">
+                        <div class="card">
+                            <img src="assets/imgs/Training Collection/Nike Pro Sculpt.png" class="card-img-top" alt="Nike Pro Sculpt">
+                            <div class="card-body">
+                                <h5 class="card-title">Nike Pro Sculpt</h5>
+                                <p class="card-text">$27.99</p>
+                                <button class="btn btn-primary add-to-cart" data-product-name="Nike Pro Indy Plunge" data-product-price="26.99">Add to Cart</button>
+                            </div>
                         </div>
+                    </div>
+                    <!-- product 4 -->
+                    <div class="col-md-3 product-card">
+                        <div class="card">
+                            <img src="assets/imgs/Training Collection/Sustainable Materials.png" class="card-img-top" alt="Nike Pro Sculpt">
+                            <div class="card-body">
+                                <h5 class="card-title">Sustainable Materials</h5>
+                                <p class="card-text">$27.99</p>
+                                <button class="btn btn-primary add-to-cart" data-product-name="Nike Pro Indy Plunge" data-product-price="26.99">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+    <!-- Accessories -->
+    <div id="accessories" class="mb-5">
+        <h3>Accessories</h3>
+        <div class="row">
+            <!-- Product 1 -->
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <img src="assets/imgs/accessories/Fat Grips (Pair).webp" class="card-img-top" alt="Nike Resistance Band">
+                    <div class="card-body">
+                        <h5 class="card-title">Fat Grips (Pair)</h5>
+                        <p class="card-text">$15.99</p>
+                        <button class="btn btn-primary add-to-cart" data-product-name="Nike Resistance Band" data-product-price="15.99">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <img src="assets/imgs/accessories/Palm Protection Gloves-Blue.webp" class="card-img-top" alt="Nike Training Gloves">
+                    <div class="card-body">
+                        <h5 class="card-title">Protection Gloves</h5>
+                        <p class="card-text">$18.99</p>
+                        <button class="btn btn-primary add-to-cart" data-product-name="Nike Training Gloves" data-product-price="18.99">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <img src="assets/imgs/accessories/Workout Hand Grips.webp" class="card-img-top" alt="Nike Water Bottle">
+                    <div class="card-body">
+                        <h5 class="card-title">Workout Hand Grips</h5>
+                        <p class="card-text">$12.99</p>
+                        <button class="btn btn-primary add-to-cart" data-product-name="Nike Water Bottle" data-product-price="12.99">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <img src="assets/imgs/Accessories/Nike Mastery Yoga Mat.jpeg" class="card-img-top" alt="Nike Yoga Mat">
+                    <div class="card-body">
+                        <h5 class="card-title">Nike Yoga Mat</h5>
+                        <p class="card-text">$22.99</p>
+                        <button class="btn btn-primary add-to-cart" data-product-name="Nike Yoga Mat" data-product-price="22.99">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Men Collection -->
-        <div class="mb-5">
-            <h3>Men Collection</h3>
-            <div class="row">
-                <!-- Product 10 -->
-                <div class="col-md-4 product-card">
-                    <div class="card">
-                        <img src="assets/imgs/men_shirt_1.jpg" class="card-img-top" alt="Men Shirt 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Men Shirt 1</h5>
-                            <p class="card-text">$29.99</p>
-                            <button class="btn btn-primary add-to-cart" data-product-name="Men Shirt 1" data-product-price="29.99">Add to Cart</button>
-                        </div>
+    <!-- Men Collection -->
+    <div id="men-collection" class="mb-5">
+        <h3>Men Collection</h3>
+        <div class="row">
+            <!-- Product 1 -->
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <img src="assets/imgs/men/Nike Air Max.jpeg" class="card-img-top" alt="Nike Air Max">
+                    <div class="card-body">
+                        <h5 class="card-title">Nike Air Max</h5>
+                        <p class="card-text">$99.99</p>
+                        <button class="btn btn-primary add-to-cart" data-product-name="Nike Air Max" data-product-price="99.99">Add to Cart</button>
                     </div>
                 </div>
-                <!-- Product 11 -->
-                <div class="col-md-4 product-card">
-                    <div class="card">
-                        <img src="assets/imgs/men_shirt_2.jpg" class="card-img-top" alt="Men Shirt 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Men Shirt 2</h5>
-                            <p class="card-text">$31.99</p>
-                            <button class="btn btn-primary add-to-cart" data-product-name="Men Shirt 2" data-product-price="31.99">Add to Cart</button>
-                        </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <img src="assets/imgs/men/Grey Nike Tech Outfit.jpeg" class="card-img-top" alt="Nike Joggers">
+                    <div class="card-body">
+                        <h5 class="card-title">Nike Tech Outfit</h5>
+                        <p class="card-text">$49.99</p>
+                        <button class="btn btn-primary add-to-cart" data-product-name="Nike Joggers" data-product-price="49.99">Add to Cart</button>
                     </div>
                 </div>
-                <!-- Product 12 -->
-                <div class="col-md-4 product-card">
-                    <div class="card">
-                        <img src="assets/imgs/men_shirt_3.jpg" class="card-img-top" alt="Men Shirt 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Men Shirt 3</h5>
-                            <p class="card-text">$32.99</p>
-                            <button class="btn btn-primary add-to-cart" data-product-name="Men Shirt 3" data-product-price="32.99">Add to Cart</button>
-                        </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <img src="assets/imgs/men/Nike knit zip-up tracksuit set in khaki-Green.jpeg" class="card-img-top" alt="Nike Tech Fleece">
+                    <div class="card-body">
+                        <h5 class="card-title">Nike  tracksuit set</h5>
+                        <p class="card-text">$89.99</p>
+                        <button class="btn btn-primary add-to-cart" data-product-name="Nike Tech Fleece" data-product-price="89.99">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <img src="assets/imgs/men/Men's Nike Usa Flex Stride 5_ Running Shorts Size Xl Cv0410-406.jpeg" class="card-img-top" alt="Nike Running Shorts">
+                    <div class="card-body">
+                        <h5 class="card-title">Nike Running Shorts</h5>
+                        <p class="card-text">$34.99</p>
+                        <button class="btn btn-primary add-to-cart" data-product-name="Nike Running Shorts" data-product-price="34.99">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Women Collection -->
-        <div class="mb-5">
-            <h3>Women Collection</h3>
-            <div class="row">
-                <!-- Product 13 -->
-                <div class="col-md-4 product-card">
-                    <div class="card">
-                        <img src="assets/imgs/women_shirt_1.jpg" class="card-img-top" alt="Women Shirt 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Women Shirt 1</h5>
-                            <p class="card-text">$27.99</p>
-                            <button class="btn btn-primary add-to-cart" data-product-name="Women Shirt 1" data-product-price="27.99">Add to Cart</button>
-                        </div>
+    <!-- Women Collection -->
+    <div id="women-collection" class="mb-5">
+        <h3>Women Collection</h3>
+        <div class="row">
+            <!-- Product 1 -->
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <img src="assets/imgs/women/Chaussures _ Sarenza achat et vente de la chaussure en ligne.jpeg" class="card-img-top" alt="Nike Sports Bra">
+                    <div class="card-body">
+                        <h5 class="card-title">Nike Sports </h5>
+                        <p class="card-text">$29.99</p>
+                        <button class="btn btn-primary add-to-cart" data-product-name="Nike Sports Bra" data-product-price="29.99">Add to Cart</button>
                     </div>
                 </div>
-                <!-- Product 14 -->
-                <div class="col-md-4 product-card">
-                    <div class="card">
-                        <img src="assets/imgs/women_shirt_2.jpg" class="card-img-top" alt="Women Shirt 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Women Shirt 2</h5>
-                            <p class="card-text">$29.99</p>
-                            <button class="btn btn-primary add-to-cart" data-product-name="Women Shirt 2" data-product-price="29.99">Add to Cart</button>
-                        </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <img src="assets/imgs/women/Shorts Nike Flex Essential 2-in-1.jpeg" class="card-img-top" alt="Nike Flex Shorts">
+                    <div class="card-body">
+                        <h5 class="card-title">Nike Flex Shorts</h5>
+                        <p class="card-text">$34.99</p>
+                        <button class="btn btn-primary add-to-cart" data-product-name="Nike Flex Shorts" data-product-price="34.99">Add to Cart</button>
                     </div>
                 </div>
-                <!-- Product 15 -->
-                <div class="col-md-4 product-card">
-                    <div class="card">
-                        <img src="assets/imgs/women_shirt_3.jpg" class="card-img-top" alt="Women Shirt 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Women Shirt 3</h5>
-                            <p class="card-text">$30.99</p>
-                            <button class="btn btn-primary add-to-cart" data-product-name="Women Shirt 3" data-product-price="30.99">Add to Cart</button>
-                        </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <img src="assets/imgs/women/Nike Tops _ Nike Pro Dri-Fit Cropped Training Tank Top-Pink Coral-Women Xl-New-Crop-Workout _ Color_ Pink _ Size_ Xl.jpeg" class="card-img-top" alt="Nike Training Tank">
+                    <div class="card-body">
+                        <h5 class="card-title">Nike Training Tank</h5>
+                        <p class="card-text">$25.99</p>
+                        <button class="btn btn-primary add-to-cart" data-product-name="Nike Training Tank" data-product-price="25.99">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <img src="assets/imgs/women/Custom Nike AIR Force 1 Sneaker - Frappe.jpeg" class="card-img-top" alt="Nike Air Force 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Nike Air Force 1</h5>
+                        <p class="card-text">$109.99</p>
+                        <button class="btn btn-primary add-to-cart" data-product-name="Nike Air Force 1" data-product-price="109.99">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- PrideGrand Collection -->
-        <div class="mb-5">
-            <h3>PrideGrand Collection</h3>
-            <div class="row">
-                <!-- Product 16 -->
-                <div class="col-md-4 product-card">
-                    <div class="card">
-                        <img src="assets/imgs/pridegrand_tshirt_1.jpg" class="card-img-top" alt="PrideGrand T-Shirt 1">
-                        <div class="card-body">
-                            <h5 class="card-title">PrideGrand T-Shirt 1</h5>
-                            <p class="card-text">$34.99</p>
-                            <button class="btn btn-primary add-to-cart" data-product-name="PrideGrand T-Shirt 1" data-product-price="34.99">Add to Cart</button>
-                        </div>
+    <!-- PrideGrand Collection -->
+    <div id="pridegrand-collection" class="mb-5">
+        <h3>PrideGrand Collection</h3>
+        <div class="row">
+            <!-- Product 1 -->
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <img src="assets/imgs/PrideGrand Collection/Women's Tops, Crop Tops, T-shirts + More _ Urban Outfitters.jpeg" class="card-img-top" alt="Nike Pride Tee">
+                    <div class="card-body">
+                        <h5 class="card-title">Nike Pride Tee</h5>
+                        <p class="card-text">$24.99</p>
+                        <button class="btn btn-primary add-to-cart" data-product-name="Nike Pride Tee" data-product-price="24.99">Add to Cart</button>
                     </div>
                 </div>
-                <!-- Product 17 -->
-                <div class="col-md-4 product-card">
-                    <div class="card">
-                        <img src="assets/imgs/pridegrand_tshirt_2.jpg" class="card-img-top" alt="PrideGrand T-Shirt 2">
-                        <div class="card-body">
-                            <h5 class="card-title">PrideGrand T-Shirt 2</h5>
-                            <p class="card-text">$36.99</p>
-                            <button class="btn btn-primary add-to-cart" data-product-name="PrideGrand T-Shirt 2" data-product-price="36.99">Add to Cart</button>
-                        </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <img src="assets/imgs/PrideGrand Collection/Nike DNA tank top in white.jpeg" class="card-img-top" alt="Nike Pride Tank">
+                    <div class="card-body">
+                        <h5 class="card-title">Nike Pride Tank</h5>
+                        <p class="card-text">$26.99</p>
+                        <button class="btn btn-primary add-to-cart" data-product-name="Nike Pride Tank" data-product-price="26.99">Add to Cart</button>
                     </div>
                 </div>
-                <!-- Product 18 -->
-                <div class="col-md-4 product-card">
-                    <div class="card">
-                        <img src="assets/imgs/pridegrand_tshirt_3.jpg" class="card-img-top" alt="PrideGrand T-Shirt 3">
-                        <div class="card-body">
-                            <h5 class="card-title">PrideGrand T-Shirt 3</h5>
-                            <p class="card-text">$38.99</p>
-                            <button class="btn btn-primary add-to-cart" data-product-name="PrideGrand T-Shirt 3" data-product-price="38.99">Add to Cart</button>
-                        </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <img src="assets/imgs/PrideGrand Collection/Nike Sportswear CROP TEE - T-shirt med print - black.jpeg" class="card-img-top" alt="Nike Pride Sweatshirt">
+                    <div class="card-body">
+                        <h5 class="card-title">Nike Pride Sweatshirt</h5>
+                        <p class="card-text">$34.99</p>
+                        <button class="btn btn-primary add-to-cart" data-product-name="Nike Pride Sweatshirt" data-product-price="34.99">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <img src="assets/imgs/PrideGrand Collection/Mens Nike White Everyday Lightweight Socks 3 Pack -  White.jpeg" class="card-img-top" alt="Nike Pride Socks">
+                    <div class="card-body">
+                        <h5 class="card-title">Nike Pride Socks</h5>
+                        <p class="card-text">$12.99</p>
+                        <button class="btn btn-primary add-to-cart" data-product-name="Nike Pride Socks" data-product-price="12.99">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <div class="container">
-            <p>&copy; 2024 ElevateX Fitness. All rights reserved.</p>
+    </div>
+</section>
+ <!-- Footer -->
+ <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+        <p>&copy; 2023 ElevateX Fitness. All rights reserved.</p>
+        <div>
+            <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-white mx-2"><i class="fab fa-whatsapp"></i></a>
         </div>
-    </footer>
+        <p>Download our app</p>
+        <a href="#" class="text-white mx-2"><i class="fab fa-apple"></i></a>
+        <a href="#" class="text-white mx-2"><i class="fab fa-google-play"></i></a>
+    </div>
+</footer>
 
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom Script -->
-    <script>
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const cartCount = document.getElementById('cartCount');
-        const cartItems = document.getElementById('cartItems');
-
-        function updateCartCount() {
-            cartCount.textContent = cart.length;
-        }
-
-        function displayCartItems() {
-            cartItems.innerHTML = '';
-            cart.forEach(item => {
-                const li = document.createElement('li');
-                li.className = 'dropdown-item';
-                li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
-                cartItems.appendChild(li);
-            });
-            document.getElementById('checkoutLink').classList.toggle('disabled', cart.length === 0);
-        }
-
-        function addToCart(name, price) {
-            cart.push({ name, price });
-            localStorage.setItem('cart', JSON.stringify(cart));
-            updateCartCount();
-            displayCartItems();
-        }
-
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', () => {
-                const name = button.getAttribute('data-product-name');
-                const price = parseFloat(button.getAttribute('data-product-price'));
-                addToCart(name, price);
-            });
-        });
-
-        updateCartCount();
-        displayCartItems();
-    </script>
-</body>
-</html>
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom Scripts -->
+<script src="assets/js/shop.js"></script>
